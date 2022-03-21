@@ -1,0 +1,4196 @@
+#N canvas 355 67 949 779 12;
+#X text 252 12 make sure novation is as midi input device #1 and as
+output device #1 and output for okta is output device #2;
+#X msg 825 158 0;
+#X msg 876 157 1;
+#X msg 776 160 0;
+#X text 876 108 reset device;
+#X obj 814 231 ctlout 1;
+#X obj 31 14 loadbang;
+#X obj 402 46 loadbang;
+#X obj 805 67 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 720 493 146 \, 15 \, 31 \, 47 \, 63 \, 63 \, 62 \, 61 \, 60
+;
+#N canvas 284 131 751 400 display 0;
+#X obj 271 241 midiout;
+#X msg 10 113 240 \, 0 \, 32 \, 41 \, 9 \, 0 \, 247;
+#X text 32 94 text off;
+#X msg 31 188 176 \, 0 \, 40;
+#X msg 594 276 144 \, 97 \, 59;
+#X msg 586 253 144 \, 98 \, 56;
+#X msg 580 200 144 \, 96 \, 12;
+#X msg 41 237 176 \, 0 \, 32;
+#X msg 597 225 144 \, 96 \, 63;
+#X text 110 187 blink;
+#X text 144 240 blink;
+#X text 291 35 text on:240 \, 0 \, 32 \, 41 \, 9 \, color \, speed
+1-7 \, text \, 247;
+#X msg 279 60 240 \, 0 \, 32 \, 41 \, 9 \, 14 \, 3 \, 124 \, 124 \,
+124 \, 124 \, 124 \, 124 \, 247;
+#X msg 286 105 240 \, 0 \, 32 \, 41 \, 9 \, 14 \, 3 \, 124 \, 247;
+#X msg 288 131 240 \, 0 \, 32 \, 41 \, 9 \, 32 \, 3 \, 124 \, 247;
+#X msg 292 161 240 \, 0 \, 32 \, 41 \, 9 \, 54 \, 3 \, 124 \, 247;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 0;
+#X restore 785 599 pd display scroll text;
+#X obj 836 538 midiout;
+#X text 741 471 quick fill row of buttons;
+#X msg 791 264 176 \, 30 \, 13;
+#X msg 792 346 176 \, 30 \, 2;
+#X text 881 261 brightness low;
+#X text 872 348 brightness normal;
+#X obj 672 356 midiout;
+#X msg 797 397 176 \, 30 \, 0;
+#X text 879 397 brightness full;
+#X msg 790 294 176 \, 30 \, 8;
+#X msg 792 319 176 \, 30 \, 4;
+#X obj 325 196 loadbang;
+#X obj 31 54 delay 30 1 msec;
+#X obj 325 222 delay 600 1 msec;
+#X obj 403 72 delay 400 1 msec;
+#X text 249 558 a b c d e f g h --IN AB CD SRC3 rec--- 8* ---------MUTES--------
+7* ---------SOLO--------- 6* ----------CUE--------- 5* -------CROSSFADE------
+4* ---SCENES-- --SCENES-- 3* ----1->8--- --9->16--- 2* -------PROGRAMS-------
+1* --------1->16--------- -round buttons top row are IN rec AB \, CD
+\, SRC3 are to set inside of patch -round buttons left side: 5:switch
+beetween two crossfader settings 4 \, 3:switch beetwen two scenes settings
+4:page 1->8 \, 9->16 3:page 9->16 \, 1->8 press again same page to
+recall current scenes 2 \, 1:switch beetwen Bank 1 and Bank 2, f 49
+;
+#X obj 632 252 loadbang;
+#X obj 632 281 delay 1000 1 msec;
+#X msg 8 535 menusave;
+#X text 1 581 save each time button is pressed;
+#X obj 27 463 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 712 13 namecanvas \$0-this;
+#X obj 8 559 s \$0-this;
+#X text 126 495 <-important \, otherwise \, data race;
+#X obj 9 494 delay 1 1 msec;
+#N canvas 89 120 1106 620 for 0;
+#X obj 57 199 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 155 215 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 263 226 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 73 297 ctlout 99 32;
+#X obj 179 295 ctlout 98 32;
+#X obj 283 284 ctlout 6 32;
+#X msg 75 261 5;
+#X msg 157 247 107;
+#X obj 272 251 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 21 141 trigger bang bang bang bang;
+#X obj 259 196 delay 1 1 msec;
+#X obj 546 254 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 558 199 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 554 287 pgmout 32;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
+#X connect 9 1 10 0;
+#X connect 9 2 1 0;
+#X connect 9 3 0 0;
+#X connect 10 0 2 0;
+#X connect 12 0 11 0;
+#X restore 14 684 pd for es1;
+#N canvas 166 102 987 423 mute 0;
+#X obj 358 31 notein 1;
+#X obj 327 62 spigot 8;
+#X obj 405 60 spigot 8;
+#X text 471 62 <-both SPIGOT's open/close incoming data from notein
+need to set according to desired page 8 \, 7 \, 6 \, 5....;
+#X obj 31 290 inlet loadbang;
+#N canvas 339 143 1000 646 mute 0;
+#X msg 422 57 0;
+#X msg 537 56 0;
+#X obj 377 145 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 457 147 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 113 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 112 199 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 19 164 route 127;
+#X obj 376 29 route 0;
+#X obj 491 27 route 1;
+#X obj 19 134 ctlin 111 1;
+#X obj 20 354 ctlout 111 1;
+#X obj 613 47 notein 1;
+#N canvas 146 88 1087 681 top 0;
+#X obj 148 257 stripnote;
+#X obj 202 471 noteout 1;
+#X text 4 210 this is for NOTE;
+#X text 88 470 out to launch->;
+#X obj 237 304 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 332 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 8 256;
+#X obj 148 309 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 218 256 ->make sure no double message;
+#X text 129 501 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 209 inlet notein NOTE;
+#X obj 283 210 inlet notein VALUE;
+#X text 203 284 ->set button number;
+#X text 253 302 ->this make it toggle button;
+#X text 9 330 ->set button number;
+#X obj 432 208 inlet for bang recall VALUE;
+#X obj 492 283 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 499 ctlout 49 17;
+#X text 272 390 ->pad color OFF;
+#X text 272 417 ->pad color ON;
+#X obj 239 418 + 48;
+#X obj 239 390 * 30;
+#X obj 305 355 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 615 487 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 48 256;
+#X obj 651 463 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 127 256;
+#X obj 608 419 notein;
+#X obj 148 284 route 8;
+#X connect 0 0 25 0;
+#X connect 4 0 20 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 1;
+#X connect 14 0 15 0;
+#X connect 15 0 21 0;
+#X connect 15 0 5 0;
+#X connect 19 0 1 1;
+#X connect 20 0 19 0;
+#X connect 21 0 16 0;
+#X connect 24 0 22 0;
+#X connect 24 1 23 0;
+#X connect 25 0 4 0;
+#X connect 25 0 6 0;
+#X coords 0 681 1 680 85 60 0;
+#X restore 242 443 pd top button row #1 MUTES;
+#N canvas 140 464 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 18;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 357 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 148 -65 route 24;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 242 464 pd top button row #2 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 40 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 19;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 325 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 148 -65 route 40;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 242 484 pd top button row #3 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 56 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 20;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 327 -14 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 148 -65 route 56;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 242 505 pd top button row #4 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 72 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 21;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 298 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 148 -65 route 72;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 241 527 pd top button row #5 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 88 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 22;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 296 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 148 -65 route 88;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 241 548 pd top button row #6 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 104 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 23;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 299 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 137 -65 route 104;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 241 568 pd top button row #7 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 120 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 24;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 287 -6 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 135 -66 route 120;
+#X connect 0 0 22 0;
+#X connect 4 0 8 0;
+#X connect 4 0 21 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 4 0;
+#X connect 22 0 6 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 241 589 pd top button row #8 MUTES;
+#N canvas 763 396 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 7 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 17;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X obj 148 -65 route 7;
+#X obj 311 -15 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X connect 0 0 21 0;
+#X connect 4 0 20 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 1;
+#X connect 14 0 15 0;
+#X connect 15 0 5 0;
+#X connect 15 0 22 0;
+#X connect 19 0 1 1;
+#X connect 20 0 19 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 16 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 655 439 pd top button row #1 MUTES;
+#N canvas 772 438 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 23 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 18;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 148 -65 route 23;
+#X obj 328 -7 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 655 460 pd top button row #2 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 39 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 19;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 148 -65 route 39;
+#X obj 336 -8 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 655 480 pd top button row #3 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 55 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 20;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 148 -65 route 55;
+#X obj 303 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 655 501 pd top button row #4 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 71 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 21;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 148 -65 route 71;
+#X obj 299 -8 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 654 523 pd top button row #5 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 87 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 22;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 148 -65 route 87;
+#X obj 285 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 654 544 pd top button row #6 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 103 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 23;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 137 -65 route 103;
+#X obj 281 -10 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 654 564 pd top button row #7 MUTES;
+#N canvas 556 278 682 332 top 0;
+#X obj 148 -92 stripnote;
+#X obj 202 94 noteout 1;
+#X text 4 -139 this is for NOTE;
+#X text 88 93 out to launch->;
+#X obj 237 -45 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 149 -17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 119 256;
+#X obj 148 -40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 239 41 + 48;
+#X obj 239 13 * 30;
+#X text 218 -93 ->make sure no double message;
+#X text 129 124 out to out to OKTA (CC# \, Channel 16+)->;
+#X obj 145 -140 inlet notein NOTE;
+#X obj 283 -139 inlet notein VALUE;
+#X text 203 -65 ->set button number;
+#X text 253 -47 ->this make it toggle button;
+#X text 9 -19 ->set button number;
+#X obj 432 -141 inlet for bang recall VALUE;
+#X obj 486 -66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 408 122 ctlout 49 24;
+#X text 272 13 ->pad color OFF;
+#X text 272 40 ->pad color ON;
+#X obj 135 -66 route 119;
+#X obj 287 -12 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X connect 0 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 22 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 7 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 17 0 22 0;
+#X connect 21 0 4 0;
+#X connect 21 0 6 0;
+#X connect 22 0 18 0;
+#X coords 0 332 1 331 85 60 0;
+#X restore 654 585 pd top button row #8 MUTES;
+#X obj 125 22 loadbang;
+#X msg 376 59 1;
+#X obj 520 141 spigot 1;
+#X obj 587 141 spigot 1;
+#X msg 491 55 2;
+#X obj 658 140 spigot 2;
+#X obj 722 140 spigot 2;
+#X obj 20 275 + 44;
+#X obj 128 62 delay 3000 1 msec;
+#X connect 0 0 30 1;
+#X connect 0 0 31 1;
+#X connect 1 0 33 1;
+#X connect 1 0 34 1;
+#X connect 2 0 12 2;
+#X connect 2 0 13 2;
+#X connect 2 0 14 2;
+#X connect 2 0 15 2;
+#X connect 2 0 16 2;
+#X connect 2 0 17 2;
+#X connect 2 0 18 2;
+#X connect 2 0 19 2;
+#X connect 3 0 20 2;
+#X connect 3 0 21 2;
+#X connect 3 0 22 2;
+#X connect 3 0 23 2;
+#X connect 3 0 24 2;
+#X connect 3 0 25 2;
+#X connect 3 0 26 2;
+#X connect 3 0 27 2;
+#X connect 4 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 7 0 29 0;
+#X connect 7 1 0 0;
+#X connect 8 0 32 0;
+#X connect 8 1 1 0;
+#X connect 9 0 6 0;
+#X connect 11 0 30 0;
+#X connect 11 0 33 0;
+#X connect 11 1 31 0;
+#X connect 11 1 34 0;
+#X connect 28 0 36 0;
+#X connect 29 0 2 0;
+#X connect 29 0 30 1;
+#X connect 29 0 31 1;
+#X connect 30 0 12 0;
+#X connect 30 0 13 0;
+#X connect 30 0 14 0;
+#X connect 30 0 15 0;
+#X connect 30 0 16 0;
+#X connect 30 0 17 0;
+#X connect 30 0 18 0;
+#X connect 30 0 19 0;
+#X connect 31 0 12 1;
+#X connect 31 0 13 1;
+#X connect 31 0 14 1;
+#X connect 31 0 15 1;
+#X connect 31 0 16 1;
+#X connect 31 0 17 1;
+#X connect 31 0 18 1;
+#X connect 31 0 19 1;
+#X connect 32 0 3 0;
+#X connect 32 0 33 1;
+#X connect 32 0 34 1;
+#X connect 33 0 20 0;
+#X connect 33 0 21 0;
+#X connect 33 0 22 0;
+#X connect 33 0 23 0;
+#X connect 33 0 24 0;
+#X connect 33 0 25 0;
+#X connect 33 0 26 0;
+#X connect 33 0 27 0;
+#X connect 34 0 20 1;
+#X connect 34 0 21 1;
+#X connect 34 0 22 1;
+#X connect 34 0 23 1;
+#X connect 34 0 24 1;
+#X connect 34 0 25 1;
+#X connect 34 0 26 1;
+#X connect 34 0 27 1;
+#X connect 35 0 10 0;
+#X connect 36 0 4 0;
+#X restore 82 111 pd mute;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X restore 31 79 pd mute for OCTA;
+#N canvas 601 34 799 640 BANK-PROGRAM 0;
+#X obj 44 21 inlet from loadbang;
+#X obj 47 55 delay 10 1 msec;
+#X obj 254 158 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 8 256;
+#N canvas 0 23 748 823 banks 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 119 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 7 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 119 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 7;
+#X msg 218 274 23;
+#X msg 301 272 39;
+#X msg 383 266 55;
+#X msg 465 269 71;
+#X msg 552 271 87;
+#X msg 630 270 103;
+#X msg 711 266 119;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 7;
+#X msg 218 274 23;
+#X msg 301 272 39;
+#X msg 383 266 55;
+#X msg 465 269 71;
+#X msg 630 270 103;
+#X msg 711 266 119;
+#X msg 552 271 87;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 26 0;
+#X connect 5 0 16 0;
+#X connect 6 0 24 0;
+#X connect 6 0 17 0;
+#X connect 7 0 25 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 8 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 119 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 812 198 v bankssss2;
+#X obj 778 12 route 7 23 39 55 71 87 103 119;
+#X msg 717 59 7;
+#X msg 750 58 23;
+#X msg 783 58 39;
+#X msg 820 58 55;
+#X msg 859 58 71;
+#X msg 894 59 87;
+#X msg 929 60 103;
+#X msg 962 60 119;
+#X obj 6 8 ctlin 111 1;
+#X obj 7 162 ctlout 111 1;
+#X obj 1076 99 stripnote;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 67 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 67 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 79 0;
+#X connect 23 1 0 0;
+#X connect 23 1 79 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 78 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 3 0;
+#X connect 68 0 69 0;
+#X connect 68 1 70 0;
+#X connect 68 2 71 0;
+#X connect 68 3 72 0;
+#X connect 68 4 73 0;
+#X connect 68 5 74 0;
+#X connect 68 6 75 0;
+#X connect 68 7 76 0;
+#X connect 69 0 1 0;
+#X connect 69 0 7 0;
+#X connect 70 0 1 0;
+#X connect 70 0 7 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 1 0;
+#X connect 76 0 7 0;
+#X connect 77 0 21 0;
+#X connect 79 0 68 0;
+#X connect 80 0 19 0;
+#X restore 265 117 pd banks;
+#N canvas 749 26 691 820 programs 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 102 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 6 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 102 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 6;
+#X msg 218 274 22;
+#X msg 301 272 38;
+#X msg 383 266 54;
+#X msg 465 269 70;
+#X msg 552 271 86;
+#X msg 630 270 102;
+#X msg 711 266 118;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 6;
+#X msg 218 274 22;
+#X msg 301 272 38;
+#X msg 383 266 54;
+#X msg 465 269 70;
+#X msg 552 271 86;
+#X msg 630 270 102;
+#X msg 711 266 118;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 7 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 102 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 812 198 v programsss2;
+#X obj 6 8 ctlin 110 1;
+#X obj 7 162 ctlout 110 1;
+#X msg 717 59 6;
+#X msg 750 58 22;
+#X msg 783 58 38;
+#X msg 820 58 54;
+#X msg 859 58 70;
+#X msg 894 59 86;
+#X msg 929 60 102;
+#X msg 962 60 118;
+#X obj 778 12 route 6 22 38 54 70 86 102 118;
+#X obj 1120 92 stripnote;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 67 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 67 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 79 0;
+#X connect 23 1 0 0;
+#X connect 23 1 79 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 69 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 3 0;
+#X connect 68 0 21 0;
+#X connect 70 0 1 0;
+#X connect 70 0 7 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 1 0;
+#X connect 76 0 7 0;
+#X connect 77 0 1 0;
+#X connect 77 0 7 0;
+#X connect 78 0 70 0;
+#X connect 78 1 71 0;
+#X connect 78 2 72 0;
+#X connect 78 3 73 0;
+#X connect 78 4 74 0;
+#X connect 78 5 75 0;
+#X connect 78 6 76 0;
+#X connect 78 7 77 0;
+#X connect 79 0 78 0;
+#X connect 80 0 19 0;
+#X restore 428 130 pd programs;
+#X obj 400 201 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 7 256;
+#X obj 399 260 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 119 256;
+#X obj 184 250 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 243 194 >= 9;
+#X obj 399 225 +;
+#X obj 345 215 * 16;
+#X obj 315 185 - 1;
+#X obj 351 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 119 256;
+#X obj 360 285 -;
+#X obj 273 236 * 128;
+#X obj 267 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 205 425 ctlout 0 17;
+#X obj 336 468 pgmout 17;
+#X obj 602 104 notein;
+#X obj 619 193 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 48 256;
+#X connect 0 0 1 0;
+#X connect 2 0 8 0;
+#X connect 2 0 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 13 0;
+#X connect 7 0 16 0;
+#X connect 8 0 7 0;
+#X connect 8 0 14 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 17 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X connect 18 0 19 0;
+#X restore 28 107 pd BANK-PROGRAM SELECT okta;
+#N canvas 0 37 799 640 BANK-PROGRAM 0;
+#X obj 44 21 inlet from loadbang;
+#X obj 47 55 delay 10 1 msec;
+#X obj 254 158 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 9 256;
+#N canvas 0 23 1021 823 banks 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 3 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 19 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 3 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+1 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 3;
+#X msg 218 274 19;
+#X msg 301 272 35;
+#X msg 383 266 51;
+#X msg 465 269 67;
+#X msg 552 271 83;
+#X msg 630 270 99;
+#X msg 711 266 115;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 3;
+#X msg 218 274 19;
+#X msg 301 272 35;
+#X msg 383 266 51;
+#X msg 465 269 67;
+#X msg 552 271 83;
+#X msg 630 270 99;
+#X msg 711 266 115;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 9 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 25 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 3 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 812 198 v bankssss;
+#X obj 1119 91 stripnote;
+#X msg 717 59 3;
+#X msg 750 58 19;
+#X msg 783 58 35;
+#X msg 820 58 51;
+#X msg 859 58 67;
+#X msg 894 59 83;
+#X msg 962 60 115;
+#X msg 929 60 99;
+#X obj 778 12 route 3 19 35 51 67 83 99 115;
+#X obj 6 8 ctlin 107 1;
+#X obj 7 162 ctlout 107 1;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 67 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 67 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 68 0;
+#X connect 23 1 0 0;
+#X connect 23 1 68 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 79 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 3 0;
+#X connect 68 0 77 0;
+#X connect 69 0 1 0;
+#X connect 69 0 7 0;
+#X connect 70 0 1 0;
+#X connect 70 0 7 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 1 0;
+#X connect 76 0 7 0;
+#X connect 77 0 69 0;
+#X connect 77 1 70 0;
+#X connect 77 2 71 0;
+#X connect 77 3 72 0;
+#X connect 77 4 73 0;
+#X connect 77 5 74 0;
+#X connect 77 6 76 0;
+#X connect 77 7 75 0;
+#X connect 78 0 21 0;
+#X connect 80 0 19 0;
+#X restore 265 117 pd banks;
+#N canvas 46 23 836 820 programs 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 2 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 18 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 2 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 812 198 v programsss;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 2;
+#X msg 218 274 18;
+#X msg 301 272 34;
+#X msg 383 266 50;
+#X msg 465 269 66;
+#X msg 552 271 82;
+#X msg 630 270 98;
+#X msg 711 266 114;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 2;
+#X msg 218 274 18;
+#X msg 301 272 34;
+#X msg 383 266 50;
+#X msg 465 269 66;
+#X msg 552 271 82;
+#X msg 630 270 98;
+#X msg 711 266 114;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 2 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 1080 67 stripnote;
+#X obj 6 8 ctlin 106 1;
+#X obj 7 162 ctlout 106 1;
+#X msg 717 59 2;
+#X msg 750 58 18;
+#X msg 783 58 34;
+#X msg 820 58 50;
+#X msg 894 59 82;
+#X msg 929 60 98;
+#X msg 962 60 114;
+#X obj 778 12 route 2 18 34 50 66 82 98 114;
+#X msg 859 58 66;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 53 0;
+#X connect 3 0 5 0;
+#X connect 4 0 31 0;
+#X connect 4 0 43 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 31 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 36 0;
+#X connect 19 0 49 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 68 0;
+#X connect 23 1 0 0;
+#X connect 23 1 68 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 63 1;
+#X connect 26 0 66 1;
+#X connect 27 0 41 0;
+#X connect 27 0 45 0;
+#X connect 27 0 42 0;
+#X connect 28 0 38 0;
+#X connect 28 0 44 0;
+#X connect 28 0 42 0;
+#X connect 29 0 65 0;
+#X connect 29 1 26 0;
+#X connect 30 0 64 0;
+#X connect 30 1 25 0;
+#X connect 31 0 3 0;
+#X connect 32 0 33 0;
+#X connect 33 0 42 0;
+#X connect 34 0 35 0;
+#X connect 35 0 42 0;
+#X connect 36 0 70 0;
+#X connect 39 0 18 0;
+#X connect 42 0 48 0;
+#X connect 42 0 67 0;
+#X connect 43 0 5 1;
+#X connect 44 0 43 0;
+#X connect 45 0 43 0;
+#X connect 48 0 62 0;
+#X connect 49 0 50 0;
+#X connect 49 1 51 0;
+#X connect 50 0 61 0;
+#X connect 51 0 54 0;
+#X connect 52 0 39 0;
+#X connect 52 0 53 0;
+#X connect 53 0 6 0;
+#X connect 53 0 66 0;
+#X connect 53 0 63 0;
+#X connect 54 0 52 0;
+#X connect 55 0 54 1;
+#X connect 56 0 61 1;
+#X connect 57 0 54 1;
+#X connect 58 0 61 1;
+#X connect 59 0 18 0;
+#X connect 60 0 59 0;
+#X connect 60 0 53 0;
+#X connect 61 0 60 0;
+#X connect 62 0 47 0;
+#X connect 62 0 56 0;
+#X connect 62 0 57 0;
+#X connect 62 1 46 0;
+#X connect 62 1 55 0;
+#X connect 62 1 58 0;
+#X connect 63 0 32 0;
+#X connect 64 0 27 0;
+#X connect 64 0 63 1;
+#X connect 65 0 28 0;
+#X connect 65 0 66 1;
+#X connect 66 0 34 0;
+#X connect 68 0 78 0;
+#X connect 69 0 21 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 1 0;
+#X connect 76 0 7 0;
+#X connect 77 0 1 0;
+#X connect 77 0 7 0;
+#X connect 78 0 71 0;
+#X connect 78 1 72 0;
+#X connect 78 2 73 0;
+#X connect 78 3 74 0;
+#X connect 78 4 79 0;
+#X connect 78 5 75 0;
+#X connect 78 6 76 0;
+#X connect 78 7 77 0;
+#X connect 79 0 1 0;
+#X connect 79 0 7 0;
+#X connect 80 0 19 0;
+#X restore 428 130 pd programs;
+#X obj 400 201 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 399 260 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 129 256;
+#X obj 184 250 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 243 194 >= 9;
+#X obj 399 225 +;
+#X obj 345 215 * 16;
+#X obj 315 185 - 1;
+#X obj 351 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 360 285 -;
+#X obj 273 236 * 128;
+#X obj 267 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 128 256;
+#X obj 336 468 pgmout 43;
+#X obj 205 425 ctlout 32 43;
+#X obj 82 426 ctlout 0 43;
+#X connect 0 0 1 0;
+#X connect 2 0 8 0;
+#X connect 2 0 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 13 0;
+#X connect 7 0 17 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 8 0 14 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 16 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X restore 325 248 pd BANK-PROGRAM SELECT ESX1;
+#N canvas 139 58 1202 403 send 0;
+#X obj 11 217 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 145 220 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 748 69 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 15 241 11;
+#X msg 145 242 119;
+#X obj 476 101 t b b b b b b b;
+#X obj 277 220 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 399 221 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 274 248 0;
+#X msg 396 249 0;
+#X obj 517 221 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 646 220 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 643 248 0;
+#X obj 796 218 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 793 246 0;
+#X msg 514 246 120;
+#X obj 795 192 delay 6 1 msec;
+#X obj 13 275 ctlout 99 18;
+#X obj 142 276 ctlout 98 18;
+#X obj 274 276 ctlout 6 18;
+#X obj 396 277 ctlout 38 18;
+#X obj 514 277 ctlout 98 18;
+#X obj 643 276 ctlout 6 18;
+#X obj 793 274 ctlout 38 18;
+#X obj 144 194 delay 2 1 msec;
+#X obj 276 194 delay 4 1 msec;
+#X obj 398 195 delay 6 1 msec;
+#X obj 516 195 delay 8 1 msec;
+#X obj 645 194 delay 10 1 msec;
+#X obj 712 19 delay 12 1 msec;
+#X obj 719 100 route 0 1;
+#X msg 720 133 0;
+#X msg 756 134 4;
+#X text 785 137 send mute \, 0 is chan 1 \, 2 is chan 2 and..;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 30 0;
+#X connect 3 0 17 0;
+#X connect 4 0 18 0;
+#X connect 5 0 29 0;
+#X connect 5 1 28 0;
+#X connect 5 2 27 0;
+#X connect 5 3 26 0;
+#X connect 5 4 25 0;
+#X connect 5 5 24 0;
+#X connect 5 6 0 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 19 0;
+#X connect 9 0 20 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 22 0;
+#X connect 13 0 14 0;
+#X connect 14 0 23 0;
+#X connect 15 0 21 0;
+#X connect 16 0 13 0;
+#X connect 24 0 1 0;
+#X connect 25 0 6 0;
+#X connect 26 0 7 0;
+#X connect 27 0 10 0;
+#X connect 28 0 11 0;
+#X connect 29 0 2 0;
+#X connect 30 0 31 0;
+#X connect 30 1 32 0;
+#X connect 31 0 23 0;
+#X connect 32 0 23 0;
+#X restore 15 715 pd send mute to EMX1 TEMPLATE;
+#N canvas 323 61 799 640 BANK-PROGRAM 0;
+#X obj 44 21 inlet from loadbang;
+#X obj 47 55 delay 10 1 msec;
+#X obj 254 158 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#N canvas 0 23 1190 823 banks 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 5 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 21 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 5 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+1 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 71 106 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 5;
+#X msg 218 273 21;
+#X msg 301 272 37;
+#X msg 383 266 53;
+#X msg 465 269 69;
+#X msg 552 271 85;
+#X msg 630 270 101;
+#X msg 711 266 117;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 5;
+#X msg 218 274 21;
+#X msg 301 272 37;
+#X msg 383 266 53;
+#X msg 465 269 69;
+#X msg 552 271 85;
+#X msg 630 270 101;
+#X msg 711 266 117;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 5 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 812 198 v bankssss3;
+#X obj 1101 91 stripnote;
+#X msg 717 59 5;
+#X msg 750 58 21;
+#X msg 783 58 37;
+#X msg 820 58 53;
+#X msg 859 58 69;
+#X msg 894 59 85;
+#X msg 929 60 101;
+#X msg 962 60 117;
+#X obj 778 12 route 5 21 37 53 69 85 101 117;
+#X obj 6 8 ctlin 109 1;
+#X obj 7 162 ctlout 109 1;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 67 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 67 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 68 0;
+#X connect 23 1 0 0;
+#X connect 23 1 68 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 79 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 3 0;
+#X connect 68 0 77 0;
+#X connect 69 0 1 0;
+#X connect 69 0 7 0;
+#X connect 70 0 1 0;
+#X connect 70 0 7 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 1 0;
+#X connect 76 0 7 0;
+#X connect 77 0 69 0;
+#X connect 77 1 70 0;
+#X connect 77 2 71 0;
+#X connect 77 3 72 0;
+#X connect 77 4 73 0;
+#X connect 77 5 74 0;
+#X connect 77 6 75 0;
+#X connect 77 7 76 0;
+#X connect 78 0 21 0;
+#X connect 80 0 19 0;
+#X restore 265 117 pd banks;
+#N canvas 77 26 1362 820 programs 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 4 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 20 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 4 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 4;
+#X msg 218 274 20;
+#X msg 301 272 36;
+#X msg 382 266 52;
+#X msg 465 269 68;
+#X msg 552 271 84;
+#X msg 630 270 100;
+#X msg 711 266 116;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 4;
+#X msg 218 274 20;
+#X msg 301 272 36;
+#X msg 383 266 52;
+#X msg 465 269 68;
+#X msg 552 271 84;
+#X msg 630 270 100;
+#X msg 711 266 116;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 4 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 812 198 v programsss3;
+#X obj 1085 115 stripnote;
+#X obj 6 8 ctlin 108 1;
+#X obj 7 162 ctlout 108 1;
+#X msg 717 59 4;
+#X msg 750 58 20;
+#X msg 783 58 36;
+#X msg 820 58 52;
+#X msg 859 58 68;
+#X msg 894 59 84;
+#X msg 929 60 100;
+#X msg 962 60 116;
+#X obj 778 12 route 4 20 36 52 68 84 100 116;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 67 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 67 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 68 0;
+#X connect 23 1 0 0;
+#X connect 23 1 68 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 70 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 3 0;
+#X connect 68 0 79 0;
+#X connect 69 0 21 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 1 0;
+#X connect 76 0 7 0;
+#X connect 77 0 1 0;
+#X connect 77 0 7 0;
+#X connect 78 0 1 0;
+#X connect 78 0 7 0;
+#X connect 79 0 71 0;
+#X connect 79 1 72 0;
+#X connect 79 2 73 0;
+#X connect 79 3 74 0;
+#X connect 79 4 75 0;
+#X connect 79 5 76 0;
+#X connect 79 6 77 0;
+#X connect 79 7 78 0;
+#X connect 80 0 19 0;
+#X restore 428 130 pd programs;
+#X obj 400 201 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 399 260 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 184 250 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 243 194 >= 9;
+#X obj 399 225 +;
+#X obj 345 215 * 16;
+#X obj 315 185 - 1;
+#X obj 351 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 360 285 -;
+#X obj 273 236 * 128;
+#X obj 267 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 205 425 ctlout 0 17;
+#X obj 602 104 notein;
+#X obj 619 193 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 48 256;
+#X obj 336 468 pgmout 41;
+#X connect 0 0 1 0;
+#X connect 2 0 8 0;
+#X connect 2 0 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 13 0;
+#X connect 8 0 7 0;
+#X connect 8 0 14 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 19 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X connect 17 0 18 0;
+#X restore 27 139 pd BANK-PROGRAM SELECT ES1;
+#N canvas 323 61 799 640 BANK-PROGRAM 0;
+#X obj 44 21 inlet from loadbang;
+#X obj 47 55 delay 10 1 msec;
+#X obj 254 158 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#N canvas 0 23 1190 823 banks 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 17 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 1;
+#X msg 218 274 17;
+#X msg 301 272 33;
+#X msg 383 266 49;
+#X msg 465 269 65;
+#X msg 552 271 81;
+#X msg 630 270 97;
+#X msg 711 266 113;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 1;
+#X msg 218 274 17;
+#X msg 301 272 33;
+#X msg 383 266 49;
+#X msg 465 269 65;
+#X msg 552 271 81;
+#X msg 630 270 97;
+#X msg 711 266 113;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 1 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 1 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 1101 91 stripnote;
+#X msg 717 59 1;
+#X msg 750 58 17;
+#X msg 783 58 33;
+#X msg 820 58 49;
+#X msg 859 58 65;
+#X msg 894 59 81;
+#X msg 929 60 97;
+#X msg 962 60 113;
+#X obj 6 8 ctlin 105 1;
+#X obj 7 162 ctlout 105 1;
+#X obj 778 12 route 1 17 33 49 65 81 97 113;
+#X obj 812 198 v bankssssKP3;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 79 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 79 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 67 0;
+#X connect 23 1 0 0;
+#X connect 23 1 67 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 77 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 78 0;
+#X connect 68 0 1 0;
+#X connect 68 0 7 0;
+#X connect 69 0 1 0;
+#X connect 69 0 7 0;
+#X connect 70 0 1 0;
+#X connect 70 0 7 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 1 0;
+#X connect 75 0 7 0;
+#X connect 76 0 21 0;
+#X connect 78 0 68 0;
+#X connect 78 1 69 0;
+#X connect 78 2 70 0;
+#X connect 78 3 71 0;
+#X connect 78 4 72 0;
+#X connect 78 5 73 0;
+#X connect 78 6 74 0;
+#X connect 78 7 75 0;
+#X connect 79 0 3 0;
+#X connect 80 0 19 0;
+#X restore 265 117 pd banks;
+#N canvas 12 26 793 820 programs 0;
+#X obj 1237 162 route;
+#X obj 908 151 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 48 256;
+#X text 1097 232 turn on selected color->;
+#X obj 809 234 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 64 256;
+#X obj 773 164 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 807 384 noteout 1;
+#X obj 1248 274 noteout 1;
+#X obj 810 131 change;
+#X obj 814 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 48 256;
+#X obj 1163 622 route 1 17 33 49 65 81 97 113 0 16 32 48 64 80 96 112
+;
+#X msg 1137 676 1;
+#X msg 1168 677 2;
+#X msg 1198 677 3;
+#X msg 1229 677 4;
+#X msg 1260 676 5;
+#X msg 1293 676 6;
+#X msg 1324 676 7;
+#X msg 1356 676 8;
+#X obj 1274 231 - 121;
+#X obj 7 104 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 6 65 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 6 35 route 127;
+#X obj 101 -9 loadbang;
+#X obj 1232 59 notein 1;
+#X obj 320 -11 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X msg 276 67 0;
+#X msg 392 65 0;
+#X obj 232 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 366 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 367 26 route 1;
+#X obj 251 28 route 0;
+#X obj 264 195 div 16;
+#X obj 265 222 + 1;
+#X obj 426 204 div 16;
+#X obj 427 231 + 9;
+#X obj 7 128 + 20;
+#X text 572 290 turn off color;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X msg 104 278 25;
+#X msg 185 274 25;
+#X msg 266 273 25;
+#X msg 348 267 25;
+#X msg 430 270 25;
+#X msg 517 272 25;
+#X msg 595 271 25;
+#X msg 676 267 25;
+#X obj 144 63 inlet bang;
+#X msg 145 275 0;
+#X msg 218 274 16;
+#X msg 301 272 32;
+#X msg 382 266 48;
+#X msg 465 269 64;
+#X msg 552 271 80;
+#X msg 630 270 96;
+#X msg 711 266 112;
+#X connect 0 0 10 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 21 0;
+#X connect 2 0 12 0;
+#X connect 3 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 23 0;
+#X connect 4 0 14 0;
+#X connect 5 0 24 0;
+#X connect 5 0 15 0;
+#X connect 6 0 25 0;
+#X connect 6 0 16 0;
+#X connect 7 0 26 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 152 479 pd fill line;
+#X msg 607 502 127;
+#X text 539 198 each need have different VALUE NAME!->;
+#N canvas 68 97 1315 692 fill 0;
+#X obj 99 207 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 181 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 245 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 327 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 409 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 496 210 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 655 205 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 218 153 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 502 342 noteout 1;
+#X obj 144 63 inlet bang;
+#X msg 104 278 24;
+#X msg 184 274 24;
+#X msg 266 273 24;
+#X msg 348 267 24;
+#X msg 430 270 24;
+#X msg 517 272 24;
+#X msg 595 271 24;
+#X msg 676 267 24;
+#X msg 145 275 0;
+#X msg 218 274 16;
+#X msg 301 272 32;
+#X msg 383 266 48;
+#X msg 465 269 64;
+#X msg 552 271 80;
+#X msg 630 270 96;
+#X msg 711 266 112;
+#X connect 0 0 11 0;
+#X connect 0 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 12 0;
+#X connect 2 0 21 0;
+#X connect 2 0 13 0;
+#X connect 3 0 22 0;
+#X connect 3 0 14 0;
+#X connect 4 0 23 0;
+#X connect 4 0 15 0;
+#X connect 5 0 24 0;
+#X connect 5 0 16 0;
+#X connect 6 0 25 0;
+#X connect 6 0 17 0;
+#X connect 7 0 26 0;
+#X connect 7 0 18 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 9 1;
+#X connect 16 0 9 1;
+#X connect 17 0 9 1;
+#X connect 18 0 9 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 9 0;
+#X connect 26 0 9 0;
+#X restore 19 479 pd fill line;
+#X obj 333 285 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 4 256;
+#X obj 735 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 24 256;
+#X msg 680 274 25, f 2;
+#X msg 657 314 24, f 2;
+#X obj 433 453 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 397 458 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 335 373 <= 8;
+#X obj 499 350 select 0 1;
+#X obj 507 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 544 381 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 612 479 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1008 227 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 48 256;
+#X obj 606 456 spigot;
+#X msg 488 472 1;
+#X msg 492 593 1;
+#X msg 491 568 0;
+#X msg 489 498 0;
+#X msg 603 598 127;
+#X obj 602 579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 603 552 spigot;
+#X obj 398 416 select 1 0;
+#X obj 251 131 spigot 1;
+#X msg 227 67 1;
+#X msg 346 67 2;
+#X obj 416 131 spigot 2;
+#X obj 283 681 outlet to progs;
+#X obj 1085 115 stripnote;
+#X obj 812 198 v programsssKP3;
+#X msg 717 59 0;
+#X msg 750 58 16;
+#X msg 783 58 32;
+#X msg 820 58 48;
+#X msg 894 59 80;
+#X msg 929 60 96;
+#X obj 6 8 ctlin 104 1;
+#X obj 7 162 ctlout 104 1;
+#X obj 778 12 route 0 16 32 48 64 80 96 112;
+#X msg 962 60 112;
+#X msg 859 58 64;
+#X obj 100 35 delay 3000 1 msec;
+#X connect 0 1 18 0;
+#X connect 1 0 52 0;
+#X connect 3 0 5 0;
+#X connect 4 0 42 0;
+#X connect 4 0 68 0;
+#X connect 7 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 68 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 9 2 12 0;
+#X connect 9 3 13 0;
+#X connect 9 4 14 0;
+#X connect 9 5 15 0;
+#X connect 9 6 16 0;
+#X connect 9 7 17 0;
+#X connect 18 0 6 1;
+#X connect 19 0 24 0;
+#X connect 19 0 35 0;
+#X connect 19 0 48 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 80 0;
+#X connect 23 0 67 0;
+#X connect 23 1 0 0;
+#X connect 23 1 67 1;
+#X connect 24 0 29 0;
+#X connect 24 0 30 0;
+#X connect 25 0 62 1;
+#X connect 26 0 65 1;
+#X connect 27 0 40 0;
+#X connect 27 0 44 0;
+#X connect 27 0 41 0;
+#X connect 28 0 37 0;
+#X connect 28 0 43 0;
+#X connect 28 0 41 0;
+#X connect 29 0 64 0;
+#X connect 29 1 26 0;
+#X connect 30 0 63 0;
+#X connect 30 1 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 41 0;
+#X connect 33 0 34 0;
+#X connect 34 0 41 0;
+#X connect 35 0 76 0;
+#X connect 38 0 18 0;
+#X connect 41 0 47 0;
+#X connect 41 0 66 0;
+#X connect 42 0 5 1;
+#X connect 43 0 42 0;
+#X connect 44 0 42 0;
+#X connect 47 0 61 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 49 0 60 0;
+#X connect 50 0 53 0;
+#X connect 51 0 38 0;
+#X connect 51 0 52 0;
+#X connect 52 0 6 0;
+#X connect 52 0 65 0;
+#X connect 52 0 62 0;
+#X connect 53 0 51 0;
+#X connect 54 0 53 1;
+#X connect 55 0 60 1;
+#X connect 56 0 53 1;
+#X connect 57 0 60 1;
+#X connect 58 0 18 0;
+#X connect 59 0 58 0;
+#X connect 59 0 52 0;
+#X connect 60 0 59 0;
+#X connect 61 0 46 0;
+#X connect 61 0 55 0;
+#X connect 61 0 56 0;
+#X connect 61 1 45 0;
+#X connect 61 1 54 0;
+#X connect 61 1 57 0;
+#X connect 62 0 31 0;
+#X connect 63 0 27 0;
+#X connect 63 0 62 1;
+#X connect 64 0 28 0;
+#X connect 64 0 65 1;
+#X connect 65 0 33 0;
+#X connect 67 0 77 0;
+#X connect 68 0 3 0;
+#X connect 69 0 1 0;
+#X connect 69 0 7 0;
+#X connect 70 0 1 0;
+#X connect 70 0 7 0;
+#X connect 71 0 1 0;
+#X connect 71 0 7 0;
+#X connect 72 0 1 0;
+#X connect 72 0 7 0;
+#X connect 73 0 1 0;
+#X connect 73 0 7 0;
+#X connect 74 0 1 0;
+#X connect 74 0 7 0;
+#X connect 75 0 21 0;
+#X connect 77 0 69 0;
+#X connect 77 1 70 0;
+#X connect 77 2 71 0;
+#X connect 77 3 72 0;
+#X connect 77 4 79 0;
+#X connect 77 5 73 0;
+#X connect 77 6 74 0;
+#X connect 77 7 78 0;
+#X connect 78 0 1 0;
+#X connect 78 0 7 0;
+#X connect 79 0 1 0;
+#X connect 79 0 7 0;
+#X connect 80 0 19 0;
+#X restore 428 130 pd programs;
+#X obj 400 201 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 4 256;
+#X obj 399 260 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 4 256;
+#X obj 184 250 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 243 194 >= 9;
+#X obj 399 225 +;
+#X obj 345 215 * 16;
+#X obj 315 185 - 1;
+#X obj 351 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 4 256;
+#X obj 360 285 -;
+#X obj 273 236 * 128;
+#X obj 267 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 205 425 ctlout 0 17;
+#X obj 602 104 notein;
+#X obj 619 193 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 48 256;
+#X obj 336 468 pgmout 47;
+#X connect 0 0 1 0;
+#X connect 2 0 8 0;
+#X connect 2 0 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 13 0;
+#X connect 8 0 7 0;
+#X connect 8 0 14 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 19 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X connect 17 0 18 0;
+#X restore 51 245 pd BANK-PROGRAM SELECT KP3;
+#X obj 27 346 stripnote 48;
+#X obj 32 397 route 48;
+#X obj 18 291 notein 29;
+#X obj 279 303 notein;
+#X obj 276 370 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 356 368 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X obj 408 335 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256;
+#X connect 1 0 5 1;
+#X connect 2 0 5 2;
+#X connect 3 0 5 0;
+#X connect 6 0 23 0;
+#X connect 7 0 25 0;
+#X connect 8 0 3 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 11 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 18 0 17 0;
+#X connect 20 0 17 0;
+#X connect 21 0 17 0;
+#X connect 22 0 24 0;
+#X connect 23 0 37 0;
+#X connect 24 0 39 0;
+#X connect 27 0 28 0;
+#X connect 28 0 18 0;
+#X connect 29 0 33 0;
+#X connect 31 0 35 0;
+#X connect 35 0 29 0;
+#X connect 43 0 44 0;
+#X connect 44 0 31 0;
+#X connect 45 0 43 0;
+#X connect 45 1 43 1;
+#X connect 46 0 47 0;
+#X connect 46 1 48 0;
+#X connect 46 2 49 0;
